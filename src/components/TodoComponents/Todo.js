@@ -1,11 +1,12 @@
 import React from 'react';
 
-const TodoData = (props) => {
+const Todo = props => {
+    console.log("hello");
     return (
         <div className="todo-item">
-            {props.task}
+            {props.todo.task}
         </div>
     );
 };
 
-export default TodoData;
+export default Todo;
