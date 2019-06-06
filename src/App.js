@@ -36,6 +36,22 @@ class App extends React.Component {
 
  changeHandler = event => this.setState({ [event.target.name]: event.target.value });
 
+ toggleComplete = id => {
+   const newList = this.state.todos.map(item => {
+     if(item.id === id) {
+       const newObj = {
+         ...item,
+         completed: !item.completed
+       };
+       return newObj;
+     } else {
+       return item;
+     }
+   });
+   
+   this.setState({ todos: newList });
+ };
+
   render() {
     return (
       <div>
